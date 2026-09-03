@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VillaVerhuur | Villa's in België</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f5f1;
+    color: #222;
+}
+
+header {
+    background: #111;
+    color: white;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.hero {
+    background: linear-gradient(135deg, #111, #555);
+    color: white;
+    padding: 90px 7%;
+    min-height: 470px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin: 0 0 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.button {
+    display: inline-block;
+    background: white;
+    color: #111;
+    padding: 14px 23px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+section {
+    padding: 60px 6%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.title h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.title p {
+    color: #666;
+}
+
+.villas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.photo {
+    height: 190px;
+    background: linear-gradient(135deg, #cfc8bc, #777);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 22px;
+}
+
+.price {
+    font-size: 19px;
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+.info {
+    color: #666;
+    line-height: 1.6;
+}
+
+.card .button {
+    background: #111;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.prices {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.price-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+}
+
+.price-box h3 {
+    font-size: 24px;
+}
+
+.big-price {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.booking {
+    background: #111;
+    color: white;
+    border-radius: 18px;
+    padding: 35px;
+    max-width: 850px;
+    margin: auto;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.full {
+    grid-column: 1 / -1;
+}
+
+input,
+select,
+textarea {
+    padding: 13px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+textarea {
+    min-height: 100px;
+}
+
+.booking button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+.notice {
+    margin-top: 15px;
+    color: #bbb;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+footer {
+    background: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 35px;
+}
+
+@media(max-width: 650px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 70px 6%;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full {
+        grid-column: auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+VillaVerhuur
+</div>
+
+<nav>
+<a href="#villas">Villa's</a>
+<a href="#prijzen">Prijzen</a>
+<a href="#boeken">Boeken</a>
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Luxe villa's<br>
+in België
+</h1>
+
+<p>
+Ontdek onze villa's in Brussel, Antwerpen en Gent.
+Ideaal voor groepen en bijzondere momenten.
+</p>
+
+<a class="button" href="#villas">
+Bekijk villa's
+</a>
+
+</div>
+
+</section>
+
+
+<section id="villas">
+
+<div class="title">
+
+<h2>
+Onze villa's
+</h2>
+
+<p>
+7 villa's in Brussel, Antwerpen en Gent
+</p>
+
+</div>
+
+
+<div class="villas">
+
+
+<div class="card">
+
+<div class="photo">
+Villa Brussel 1
+</div>
+
+<div class="card-content">
+
+<h3>
+Villa Brussel 1
+</h3>
+
+<div class="info">
+📍 Brussel
+</div>
+
+<div class="price">
+€150 overdag · €250 nacht
+</div>
+
+<div class="info">
+Overdag: 11:00 – 21:00<br>
+Nacht: 11:00 – 12:00 volgende dag
+</div>
+
+<a class="button" href="#boeken">
+Boek deze villa
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="photo">
+Villa Brussel 2
+</div>
+
+<div class="card-content">
+
+<h3>
+Villa Brussel 2
+</h3>
+
+<div class="info">
+📍 Brussel
+</div>
+
+<div class="price">
+€150 overdag · €250 nacht
+</div>
+
+<div class="info">
+Overdag: 11:00 – 21:00<br>
+Nacht: 11:00 – 12:00 volgende dag
+</div>
+
+<a class="button" href="#boeken">
+Boek deze villa
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="photo">
+Villa Brussel 3
+</div>
+
+<div class="card-content">
+
+<h3>
+Villa Brussel 3
+</h3>
+
+<div class="info">
+📍 Brussel
+</div>
+
+<div class="price">
+€150 overdag · €250 nacht
+</div>
+
+<div class="info">
+Overdag: 11:00 – 21:00<br>
+Nacht: 11:00 – 12:00 volgende dag
+</div>
+
+<a class="button" href="#boeken">
+Boek deze villa
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="photo">
+Villa Antwerpen 1
+</div>
+
+<div class="card-content">
+
+<h3>
+Villa Antwerpen 1
+</h3>
+
+<div class="info">
+📍 Antwerpen
+</div>
+
+<div class="price">
+€150 overdag · €250 nacht
+</div>
+
+<div class="info">
+Overdag: 11:00 – 21:00<br>
+Nacht: 11:00 – 12:00 volgende dag
+</div>
+
+<a class="button" href="#boeken">
+Boek deze villa
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="photo">
+Villa Antwerpen 2
+</div>
+
+<div class="card-content">
+
+<h3>
+Villa Antwerpen 2
+</h3>
+
+<div class="info">
+📍 Antwerpen
+</div>
+
+<div class="price">
+€150 overdag · €250 nacht
+</div>
+
+<div class="info">
+Overdag: 11:00 – 21:00<br>
+Nacht: 11:00 – 12:00 volgende dag
+</div>
+
+<a class="button" href="#boeken">
+Boek deze villa
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="photo">
+Villa Antwerpen 3
+</div>
+
+<div class="card-content">
+
+<h3>
+Villa Antwerpen 3
+</h3>
+
+<div class="info">
+📍 Antwerpen
+</div>
+
+<div class="price">
+€150 overdag · €250 nacht
+</div>
+
+<div class="info">
+Overdag: 11:00 – 21:00<br>
+Nacht: 11:00 – 12:00 volgende dag
+</div>
+
+<a class="button" href="#boeken">
+Boek deze villa
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="photo">
+Villa Gent 1
+</div>
+
+<div class="card-content">
+
+<h3>
+Villa Gent 1
+</h3>
+
+<div class="info">
+📍 Gent
+</div>
+
+<div class="price">
+€150 overdag · €250 nacht
+</div>
+
+<div class="info">
+Overdag: 11:00 – 21:00<br>
+Nacht: 11:00 – 12:00 volgende dag
+</div>
+
+<a class="button" href="#boeken">
+Boek deze villa
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<section id="prijzen">
+
+<div class="title">
+
+<h2>
+Onze prijzen
+</h2>
+
+<p>
+Eenvoudig en duidelijk
+</p>
+
+</div>
+
+
+<div class="prices">
+
+<div class="price-box">
+
+<h3>
+☀️ Overdag
+</h3>
+
+<div class="big-price">
+€150
+</div>
+
+<p>
+11:00 – 21:00
+</p>
+
+</div>
+
+
+<div class="price-box">
+
+<h3>
+🌙 Nacht
+</h3>
+
+<div class="big-price">
+€250
+</div>
+
+<p>
+11:00 – 12:00 volgende dag
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="boeken">
+
+<div class="title">
+
+<h2>
+Boeking aanvragen
+</h2>
+
+<p>
+Vul hieronder je gegevens in.
+</p>
+
+</div>
+
+
+<div class="booking">
+
+<form id="bookingForm">
+
+
+<div class="form-grid">
+
+
+<div class="field">
+
+<label>
+Naam
+</label>
+
+<input
+id="name"
+required
+placeholder="Voor- en achternaam">
+
+</div>
+
+
+
+<div class="field">
+
+<label>
+Telefoonnummer
+</label>
+
+<input
+id="phone"
+required
+placeholder="+32 ...">
+
+</div>
+
+
+
+<div class="field">
+
+<label>
+Villa
+</label>
+
+<select id="villa" required>
+
+<option value="">
+Kies een villa
+</option>
+
+<option>
+Villa Brussel 1
+</option>
+
+<option>
+Villa Brussel 2
+</option>
+
+<option>
+Villa Brussel 3
+</option>
+
+<option>
+Villa Antwerpen 1
+</option>
+
+<option>
+Villa Antwerpen 2
+</option>
+
+<option>
+Villa Antwerpen 3
+</option>
+
+<option>
+Villa Gent 1
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="field">
+
+<label>
+Datum
+</label>
+
+<input
+id="date"
+type="date"
+required>
+
+</div>
+
+
+
+<div class="field">
+
+<label>
+Type boeking
+</label>
+
+<select id="type">
+
+<option>
+Overdag — €150
+</option>
+
+<option>
+Nacht — €250
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="field">
+
+<label>
+Aantal personen
+</label>
+
+<input
+id="people"
+type="number"
+min="1"
+required
+placeholder="Bijvoorbeeld 8">
+
+</div>
+
+
+
+<div class="field full">
+
+<label>
+Extra informatie
+</label>
+
+<textarea
+id="message"
+placeholder="Heb je nog vragen of opmerkingen?">
+</textarea>
+
+</div>
+
+
+</div>
+
+
+<button
+class="button"
+type="submit">
+
+Boeking aanvragen via WhatsApp
+
+</button>
+
+
+<div class="notice">
+
+Een aanvraag is pas definitief nadat VillaVerhuur
+de beschikbaarheid heeft bevestigd.
+
+</div>
+
+
+</form>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+<strong>
+VillaVerhuur
+</strong>
+
+<br><br>
+
+Villa's in Brussel · Antwerpen · Gent
+
+<br><br>
+
+© 2026 VillaVerhuur
+
+</footer>
+
+
+
+<script>
+
+document.getElementById("date").min =
+new Date().toISOString().split("T")[0];
+
+
+document.getElementById("bookingForm")
+.addEventListener("submit", function(e) {
+
+e.preventDefault();
+
+
+const name =
+document.getElementById("name").value;
+
+const phone =
+document.getElementById("phone").value;
+
+const villa =
+document.getElementById("villa").value;
+
+const date =
+document.getElementById("date").value;
+
+const type =
+document.getElementById("type").value;
+
+const people =
+document.getElementById("people").value;
+
+const message =
+document.getElementById("message").value;
+
+
+/*
+VERVANG HIERONDER HET NUMMER
+DOOR JOUW WHATSAPP-NUMMER.
+
+Gebruik landcode zonder +.
+
+Voorbeeld:
+32470123456
+*/
+
+const whatsappNumber =
+"32470000000";
+
+
+const text =
+"Hallo VillaVerhuur,%0A%0A" +
+
+"Ik wil graag een boeking aanvragen.%0A%0A" +
+
+"Naam: " +
+encodeURIComponent(name) +
+
+"%0ATelefoon: " +
+encodeURIComponent(phone) +
+
+"%0AVilla: " +
+encodeURIComponent(villa) +
+
+"%0ADatum: " +
+encodeURIComponent(date) +
+
+"%0ABoeking: " +
+encodeURIComponent(type) +
+
+"%0AAantal personen: " +
+encodeURIComponent(people) +
+
+"%0AExtra informatie: " +
+encodeURIComponent(message || "Geen");
+
+
+window.open(
+"https://wa.me/" +
+whatsappNumber +
+"?text=" +
+text,
+"_blank"
+);
+
+});
+
+</script>
+
+</body>
+</html>
